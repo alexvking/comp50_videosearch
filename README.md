@@ -25,11 +25,11 @@ differences, and transformations (such as flipping across an axis)
 
 Files:
 Reverse Search Engine Files:
-* framediff.py - Calculates a RMSE difference for 2 PNG images
-* chunkCompare.py - Calculates a close matching segment between a query video
-  and a comparison video by calculating the mean RMSE score for a segment
-* producer.py - Creates chunks to call chunkCompare on
+* framediff.py - Frame difference module. Exports one function, frame_rmse, that returns the root-mean-square error between two NumPy RGB arrays.
+* chunk_compare.py - Video chunk comparison module. Exports one function, chunk_compare, that returns a list of matching sequences between the queried video and the specified database video.
+* generate_jobs.py - Parallel database search module. Exports one function, server_entry, that when given a multiprocessing Queue will return a number of results for the client to expect to be added to the results queue. In effect, this allows the GUI to call the program with a query video path, watch for live additions to the results queue, and know when no more jobs will be added on.
 * timeConvert.py - Short module to convert between timestamps and second count
+* videoSearch.py - Wrapper module to call producer from the command line
 
 Web Application Files:
 * server.py - Code to set up server
@@ -39,7 +39,7 @@ Web Application Files:
 
 How to Run:
 
-Currently there are two ways to run the application- through the GUI which is
+There are two ways to run the application- through the GUI which is
 created as a web application using Flask. To do this:
 
 You can also run the program via the console, using the command:
@@ -47,6 +47,13 @@ You can also run the program via the console, using the command:
 python videoSearch.py inputfile.mp4 path/to/database/ threshold
 
 Threshold should be a percent value beteween 0-100.
+
+Video Search relies on the following modules (which can be installed via PIP):
+* MoviePy
+* Pillow
+* NumPy
+* Flask
+* SciPy
 
 Note that this application relies on the MoviePy module, created by GitHub user
 Zulko https://github.com/Zulko, which in turn calls the FFMPEG file
