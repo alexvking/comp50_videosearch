@@ -37,5 +37,16 @@ Web Application Files:
 * stream_vid.py - Code to handle streaming videos
 * upload.py - Code to handle user video uploads
 
+How to Run:
+
+Currently there are two ways to run the application- through the GUI which is
+created as a web application using Flask. To do this:
+
+You can also run the program via the console, using the command:
+
+python videoSearch.py inputfile.mp4 path/to/database/ threshold
+
+Threshold should be a percent value beteween 0-100.
+
 Note that this application relies on the MoviePy module, created by GitHub user
 Zulko https://github.com/Zulko, which in turn calls the FFMPEG file
