@@ -97,7 +97,7 @@ def startSearch(queryPath, dbPath, threshold, jobQueue, resultsQueue):
     for i in range(numConsumers):
         jobQueue.put(None)
 
-    print "Nones have been put on the queue for video", dbPath
+    print "None have been put on the queue for video", dbPath
     
     jobLock.acquire()
     globalJobs.value += numJobs

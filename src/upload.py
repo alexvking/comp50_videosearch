@@ -1,11 +1,11 @@
-
-# Render HTML templates and access data sent by POST using
-# the request object from flask. Redirect and url_for will
-# be used to redirect the user once the upload is done and
-# send_from_directory or play.html (depending on view) will 
-# help us to send/show on the browser the file that the user 
-# just uploaded
-
+"""
+Render HTML templates and access data sent by POST using
+the request object from flask. Redirect and url_for will
+be used to redirect the user once the upload is done and
+send_from_directory or play.html (depending on view) will 
+help us to send/show on the browser the file that the user 
+just uploaded
+"""
 
 import sys
 sys.path.insert(0, './src')
