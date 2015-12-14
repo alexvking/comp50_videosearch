@@ -32,10 +32,10 @@ Reverse Search Engine Files:
 * videoSearch.py - Wrapper module to call producer from the command line
 
 Web Application Files:
-* server.py - Code to set up server
-* static_website.py - Flask code to interact with website
-* stream_vid.py - Code to handle streaming videos
-* upload.py - Code to handle user video uploads
+* server.py - Code to use the Flask framework to set up a GUI
+* static - the directory containing all CSS, and JavaScript Files
+	* video - a subdirectory in static containing the video database
+* template - the directory containing all HTML files
 
 How to Run:
 
@@ -47,6 +47,12 @@ You can also run the program via the console, using the command:
 python videoSearch.py inputfile.mp4 path/to/database/ threshold
 
 Threshold should be a percent value beteween 0-100.
+
+You can also run it via a web application implemented with Flask. To do this, run the command
+
+python server.py
+
+on your command line, then open up a web browser and view the page hosted on local host port 9090.
 
 Video Search relies on the following modules (which can be installed via PIP):
 * MoviePy
