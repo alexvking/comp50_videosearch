@@ -7,8 +7,10 @@ Created by Isabelle Sennett
 To use: (1) run "python server.py" 
         (2) go to a web browser type in this URL http://localhost:9090/
 
-This is the module that creates and maintains the local website which is the 
-graphical interface for the videosearch program
+Creates a server that maintains the web-based user interface. The server 
+interacts with both the search engine and the client. It processes requests 
+from the client such as rerouting to the about or help page while also handling
+ data that the client posts to the server. The server starts the search engine 
 """
 
 # Uses the following html templates:
@@ -73,6 +75,7 @@ def allowed_file(filename):
 # Start the search process and then handle live streaming the results
 @app.route('/results/<threshold>/<queryFilename>/', methods=['POST', 'GET'])
 def streamResults(threshold, queryFilename):
+    
     resultsQueue = mp.Queue()
     quaryPath = 'static/query' + '/' + queryFilename
     database = app.config['DATABASE'] + '/'
