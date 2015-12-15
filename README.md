@@ -83,12 +83,14 @@ There are two ways to run the application:
   then open up a web browser and go to the URL http://localhost:9090/
 
 (2) You can also run the program via the console, using the command:
-        python videoSearch.py inputfile.mp4 path/to/database/ threshold
+
+python videoSearch.py inputfile.mp4 path/to/database/ threshold
 
 * Threshold should be a percent value between 0-100.
 * With the directory system provided, this is a good sample test 
   (run from src directory)
-        python videoSearch.py ../static/video/Sail7s.mp4 ../static/video/ 30
+
+python videoSearch.py ../static/video/Sail7s.mp4 ../static/video/ 30
 
 
 
